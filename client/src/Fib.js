@@ -28,7 +28,7 @@ export default class Fib extends Component {
     }
 
     renderSeenIndexes() {
-        return this.state.seenIndexes.map(number => number).join(', ');
+        return this.state.seenIndexes.map(response => response.number).join(', ');
     }
 
     renderValues() {
@@ -57,7 +57,7 @@ export default class Fib extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit()}>
+                <form onSubmit={this.handleSubmit}>
                     <label>Enter your index : </label>
                     <input
                         value={this.state.index}
