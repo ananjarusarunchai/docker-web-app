@@ -50,7 +50,7 @@ export default class Fib extends Component {
         });
 
         this.setState({
-            index: '';
+            index: ''
         })
     }
 
