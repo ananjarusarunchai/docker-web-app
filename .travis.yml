@@ -3,22 +3,22 @@ services:
   - docker
 
 before_install:
-  - docker build -t ananj/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t ananjarusarunchai/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true ananj/react-test npm run test -- --coverage
+  - docker run -e CI=true ananjarusarunchai/react-test npm run test -- --coverage
 
 after_success:
-  - docker build -t ananj/webapp-client ./client
-  - docker build -t ananj/webapp-nginx  ./nginx
-  - docker build -t ananj/webapp-server ./server
-  - docker build -t ananj/webapp-worker ./worker
+  - docker build -t ananjarusarunchai/webapp-client ./client
+  - docker build -t ananjarusarunchai/webapp-nginx  ./nginx
+  - docker build -t ananjarusarunchai/webapp-server ./server
+  - docker build -t ananjarusarunchai/webapp-worker ./worker
   # Log in to the Docker CLI 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push to the DockerHub.
   # echo "$DOCKER_PASSWORD" ==> retrieve Docker password from env variable
   # | to emit the output from echo "$DOCKER_PASSWORD" to the next command
-  - docker push ananj/webapp-client
-  - docker push ananj/webapp-nginx
-  - docker push ananj/webapp-server
-  - docker push ananj/ananj/webapp-worker
+  - docker push ananjarusarunchai/webapp-client
+  - docker push ananjarusarunchai/webapp-nginx
+  - docker push ananjarusarunchai/webapp-server
+  - docker push ananjarusarunchai/webapp-worker
