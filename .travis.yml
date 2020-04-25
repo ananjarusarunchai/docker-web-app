@@ -22,3 +22,18 @@ after_success:
   - docker push ananjarusarunchai/webapp-nginx
   - docker push ananjarusarunchai/webapp-server
   - docker push ananjarusarunchai/webapp-worker
+
+# deploy:
+#   provider: elasticbeanstalk
+#   region: "us-west-2"
+#   app: webapp
+#   env: webapp-env
+#   bucket_name: "elasticbeanstalk-us-west-2-400613763857" # s3 name
+#   bucket_path: "webapp" # folder name
+#   on:
+#     branch: master  
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key: $AWS_SECRET_KEY
+
+
+
