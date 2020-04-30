@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: client
-      image: ananjarusarunchai/webapp-client
+      image: ananjarusarunchai/webapp-worker
       ports:
         - containerPort: 3000
