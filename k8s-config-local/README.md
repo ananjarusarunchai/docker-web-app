@@ -16,3 +16,8 @@ get detail
 $kubectl describe ${type}(pods) ${objname}(label in the configfile)
 
 *Do not use Pods in the deployment to production.
+
+
+Imparetive update image.
+$kubectl set image <objtype>/<objname> <container_name>= <new image to use (tag)>
+$kubectl set image deployment/client-deployment client ananjarucarunchai.multi-client:v2
